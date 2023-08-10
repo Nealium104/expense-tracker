@@ -1,9 +1,10 @@
 import { ExpenseItem } from "./ExpenseItem";
 import "./Expenses.css";
+import { Card } from "./Card";
 
 export function Expenses({ expense }) {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem
         title={expense[0].title}
         amount={expense[0].amount}
@@ -29,6 +30,6 @@ export function Expenses({ expense }) {
         amount={expense[4].amount}
         date={expense[4].date}
       />
-    </div>
+    </Card>
   );
 }
