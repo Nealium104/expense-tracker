@@ -1,7 +1,7 @@
-import { Expenses } from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 import "./App.css";
 
-function App() {
+export default function App() {
   let expense = [
     {
       title: "Desk",
@@ -36,5 +36,3 @@ function App() {
     </>
   );
 }
-
-export default App;

@@ -1,8 +1,8 @@
-import { ExpenseItem } from "./ExpenseItem";
+import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
-import { Card } from "./UI/Card";
+import Card from "../UI/Card";
 
-export function Expenses({ expense }) {
+export default function Expenses({ expense }) {
   return (
     <Card className="expenses">
       <ExpenseItem
