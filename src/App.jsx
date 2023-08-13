@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 import "./App.css";
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
 
   return (
     <>
+      <NewExpense />
       <Expenses expense={expense} />
     </>
   );
