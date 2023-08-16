@@ -1,13 +1,13 @@
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
-export default function NewExpense() {
+export default function NewExpense({ onAddExpense }) {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
-      ...enteredExapenseData,
+      ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(expenseData);
+    onAddExpense(expenseData);
   };
 
   return (
