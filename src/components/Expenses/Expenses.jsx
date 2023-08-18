@@ -4,45 +4,38 @@ import ExpensesFilter from "../Expensesfilter";
 import "./Expenses.css";
 import Card from "../UI/Card";
 
-export default function Expenses({ expense }) {
+export default function Expenses({ expenses }) {
   const [selectedYear, setSelectedYear] = useState("2020");
 
   const handleYearChange = (selectedYear) => {
     setSelectedYear(selectedYear);
   };
 
+  const filteredExpenses = expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === selectedYear;
+  });
+
+  let expensesContent = <p>No expenses found.</p>;
+
+  if (filteredExpenses.length > 0) {
+    filteredExpenses.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter
           selected={selectedYear}
-          onExpensesFilterUpdate={handleYearChange}
+          onYearChange={handleYearChange}
         />
-        <ExpenseItem
-          title={expense[0].title}
-          amount={expense[0].amount}
-          date={expense[0].date}
-        />
-        <ExpenseItem
-          title={expense[1].title}
-          amount={expense[1].amount}
-          date={expense[1].date}
-        />
-        <ExpenseItem
-          title={expense[2].title}
-          amount={expense[2].amount}
-          date={expense[2].date}
-        />
-        <ExpenseItem
-          title={expense[3].title}
-          amount={expense[3].amount}
-          date={expense[3].date}
-        />
-        <ExpenseItem
-          title={expense[4].title}
-          amount={expense[4].amount}
-          date={expense[4].date}
-        />
+        {expensesContent}
       </Card>
     </div>
   );
