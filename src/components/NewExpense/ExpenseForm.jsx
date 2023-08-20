@@ -65,6 +65,7 @@ export default function ExpenseForm(props) {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+    props.onToggleMenu();
   };
 
   return (
@@ -100,7 +101,9 @@ export default function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button onClick={props.onToggleMenu}>Cancel</button>
+        <button type="button" onClick={props.onToggleMenu}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

@@ -18,7 +18,11 @@ export default function NewExpense({ onAddExpense }) {
   };
 
   if (menu) {
-    return <button onClick={toggleForm}>Add Expense</button>;
+    return (
+      <div className="new-expense">
+        <button onClick={toggleForm}>Add Expense</button>
+      </div>
+    );
   } else {
     return (
       <div className="new-expense">
