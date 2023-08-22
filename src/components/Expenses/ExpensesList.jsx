@@ -1,5 +1,6 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
+import "./ExpensesList.css";
 
 export default function ExpensesList({ expenses }) {
   if (expenses.length === 0) {
